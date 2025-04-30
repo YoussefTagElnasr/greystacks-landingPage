@@ -1,0 +1,72 @@
+@keyframes AiPoweredAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.Hero {
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.Hero h1 {
+    font-size: 2rem;
+}
+
+.Hero h1 span {
+    padding: 5px 0px;
+    position: relative;
+}
+
+.Hero h1 span::after {
+    content: "";
+    animation: AiPoweredAnimation 1s ease-in-out 300ms 1;
+    width: 0%;
+    height: 4px;
+    background-color: #00B050;
+    animation-fill-mode: forwards;
+    top: 100%;
+    left: 0%;
+    position: absolute;
+}
+
+.Hero p {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.Hero .Buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.Hero .HeroVideo {
+    margin-top: 60px;
+}
+
+.Hero .HeroVideo img { 
+    margin: auto;
+}
+
+@media only screen and (max-width: 550px) {
+    .Hero {
+        width: 100vw;
+        text-align: center;
+        margin: 40px 0px;
+    }
+
+    .Hero h1 {
+        font-size: 1.5rem;
+        line-height: 2;
+    }
+
+    .Hero .HeroVideo {
+        width: 100%;
+    }
+}

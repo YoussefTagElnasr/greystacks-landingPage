@@ -1,0 +1,44 @@
+.Benefits h2 {
+    margin: 20px 0px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.BenefitsContainer {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 50px;
+    width: 60%;
+    margin: 60px auto;
+}
+
+
+.BenefitHead {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.BenefitsContainer .Benefit h3 {
+    font-size: 1.4rem;
+}
+
+.BenefitsContainer .Benefit p {
+    line-height: 2rem;
+}
+
+.BenefitsContainer .Benefit svg {
+    font-size: 2rem;
+} 
+
+@media only screen and (max-width: 850px) {
+    .Benefits {
+        width: 100vw;
+        padding: 0px;
+    }
+
+    .BenefitsContainer {
+        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
+    }
+}

@@ -1,0 +1,15 @@
+.RequestADemo {
+    padding: 3% 6%;
+}
+
+.RequestADemo > * {
+    min-width: 300px;
+    max-width: 50%;
+    margin: auto;
+}
+
+.RequestADemo img {
+    width: 30%;
+    margin-bottom: 60px;
+}
+

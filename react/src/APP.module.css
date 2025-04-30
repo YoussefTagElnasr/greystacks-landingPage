@@ -1,0 +1,23 @@
+.App {
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+@media print {
+    .App {
+        overflow: unset;
+    }
+    @page {
+        size: auto;
+        margin: 0;
+    }
+    body::after {
+        content: none !important;
+    }
+    head > title {
+        display: none;
+    }
+}

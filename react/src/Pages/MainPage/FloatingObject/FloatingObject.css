@@ -1,0 +1,7 @@
+.floating-object {
+    position: absolute;
+    width: 80px;
+    user-select: none;
+    pointer-events: auto;
+    z-index: 10;
+}

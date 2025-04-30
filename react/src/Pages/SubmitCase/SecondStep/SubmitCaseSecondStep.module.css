@@ -1,0 +1,185 @@
+.SubmitCaseFirstPage {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 3% 6%;
+}
+
+.InsertcaseImgContainer {
+    border: 2px solid #00b050;
+    padding: 10px;
+    gap: 20px;
+    display: flex;
+    overflow: auto;
+    width: 80%;
+    margin: auto;
+}
+
+.SubmitCaseFirstPage > input:first-of-type {
+    padding: 5px 20px;
+    border: 2px solid #00b050;
+}
+
+.SubmitCaseFirstPage > input:first-of-type::placeholder {
+    font-size: .9rem;
+}
+
+.InsertcaseImgContainer .imageContainer > img {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    position: relative;
+    z-index: 0;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+.insertPicsInput {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    height: 100px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.customFileUpload {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.customFileUpload span {
+    margin-right: 5px;
+}
+
+.fileInput {
+    display: none;
+}
+
+.selectedImagesContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    padding: 30px 6%;
+    background-color: #0C233F;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.imageContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+}
+
+.caseImageOptions {
+    width: 100%;
+    height: 100%;
+    background-color: #235593d9;
+    transition: transform 300ms ease-in-out;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    justify-items: center;
+    z-index: 1;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    transform: translateY(130%);
+}
+
+.caseImageOptions > h2 {
+    color: #00b050;
+    grid-column: 1 / -1;
+    font-size: 0.8rem;
+    text-align: center;
+    align-self: center;
+}
+
+.caseImageOptions svg {
+    font-size: 1rem;
+    justify-self: end;
+    align-self: end;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.caseImageOptions svg:first-of-type {
+    justify-self: start;
+    margin-left: 10px;
+}
+
+.imageContainer:hover .caseImageOptions {
+    transform: translateY(0%);
+}
+
+.showImageInfo  {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(0, 0, 0, 0.39);
+    z-index: 99;
+    top: -10%;
+    left: 0%;
+}
+
+.showImageInfo h3 {
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    transform: translate(20%, 100%);
+    width: 40%;
+    background-color: #0C233F;
+    color: white;
+    padding: 20px;
+}
+
+@media only screen and (max-width: 850px) {
+    .SubmitCaseFirstPage {
+        width: 100vw;
+        padding: 10px;
+    }
+
+    .InsertcaseImgContainer {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .selectedImagesContainer {
+        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
+
+        padding: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .insertPicsInput {
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .selectedImagesContainer {
+        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
+
+        padding: 30px 0px;
+    }
+}

@@ -1,0 +1,29 @@
+.LearnMore{
+    background-color: #0C233F;
+    width: 100vw;
+}
+
+.LearnMore .Content {
+    padding: 5%;
+    color: white;
+}
+
+.LearnMore .Content h2 {
+    margin: 30px 0px;
+    font-size: 2rem;
+}
+
+.LearnMore .Content p {
+    margin-bottom: 30px;
+}
+
+.LearnMore .Content > a {
+    display: inline-block;
+    padding: 10px 30px;
+}
+
+@media only screen and (max-width: 550px) {
+    .LearnMore .Content h2 {
+        font-size: 1.5rem;
+    }
+}

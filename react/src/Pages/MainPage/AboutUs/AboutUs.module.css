@@ -1,0 +1,101 @@
+.AboutUs {
+    padding-bottom: 30px !important;
+    color: white;
+    position: relative;
+    width: 100vw ;
+}
+
+.AboutUs h2 {
+    margin-bottom: 50px;
+    padding-top: 50px;
+    text-align: center;
+
+}
+
+.AboutUs .Info {
+    background-color: #0C233F;
+}
+
+.AboutUs .Info:last-of-type { 
+    border-top:60px solid #021a38b0;
+}
+
+.AboutUs .Content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 0 16%;
+    padding-bottom: 60px;
+}
+
+.AboutUs .Content img {
+    width: 40%;
+    
+}
+
+.AboutUs .Content .Details {
+    width: 50%;
+}
+
+.AboutUs .Content .Details h3 {
+    font-size: 1rem;
+}
+
+.AboutUs .Content .Details ul {
+    text-align: start;
+    line-height: 4rem;
+}
+
+.AboutUs .Content .Details ul li {
+    line-height: 1.8;
+    margin-top: 30px;
+}
+
+.AboutUs .Content .Details h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+
+.leftLine {
+    position: absolute;
+    background-color: #00B050;
+    height: 10px;
+    top: 0;
+    left: 50%;
+}
+
+.rightLine {
+    position: absolute;
+    background-color: #00B050;
+    height: 10px;
+    top: 0;
+    right: 50%;
+}
+
+@media only screen and (max-width: 850px) {
+    .AboutUs .Content img {
+        margin: auto;
+    }
+
+    .AboutUs .Content {
+        display: block;
+        gap: 0px;
+        padding: 0;
+        padding-bottom: 10px;
+    }
+
+    .AboutUs .Content .Details ul {
+        line-height: 2rem;
+        display: grid;
+        gap: 2rem;
+        font-size: 0.9rem;
+        grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
+    }
+
+    .AboutUs .Content .Details {
+        width: 100%;
+    }
+}

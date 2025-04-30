@@ -1,0 +1,90 @@
+.ContactUs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #153051;
+    color: white;
+    padding: 30px;
+    justify-content: space-between;
+    gap: 20px 30px;
+    max-width: 60%;
+    margin: auto;
+    margin-top: 3%;
+    border-radius: 25px;
+}
+
+.ContactUs h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 60px ;
+}
+
+.ContactUs label {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.ContactUs label input {
+    padding: 5px;
+    border: 2px solid #00b050;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.ContactUs label h3 {
+    margin-bottom: 10px;
+}
+
+.ContactUs label select {
+    border: 2px solid #00b050;
+    padding: 8px 20px;
+    border-radius: 7px;
+
+}
+
+.ContactUs label:last-of-type {
+    grid-column: 1 / -1;
+}
+
+.ContactUs label textarea {
+    border: 2px solid #00b050;
+    width: 100%;
+    border-radius: 7px;
+
+}
+
+.ContactUs button {
+    background-color: transparent;
+    border: 2px solid #00b050;
+    width: 50%;
+    grid-column: 2 / -1;
+    color: white;
+    justify-self: end;
+    cursor: pointer;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+    border-radius: 7px;
+
+}
+
+.ContactUs button:hover {
+    background-color: #00b050;
+    color: white;
+}
+
+@media only screen and (max-width: 850px) {
+    .ContactUs {
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px;
+        max-width: 100%;
+        margin-top: 0px;
+        box-shadow: none;
+    }
+
+    .ContactUs label select {
+        width: 100%;
+    }
+
+    .ContactUs button {
+        margin-left: auto;
+    } 
+}

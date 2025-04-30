@@ -1,0 +1,108 @@
+.SubmitCaseFirstStep {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 40%;
+    margin: auto;
+    border: 1px solid #00b050;
+    padding: 30px;
+    border-radius: 10px;
+}
+.SubmitCaseFirstStep > * {
+    flex-basis: 47%;
+}
+
+.SubmitCaseFirstStep input  {
+    max-width: 100%;
+}
+
+.SubmitCaseFirstStep > label {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 50px;
+}
+
+.SubmitCaseFirstStep label h4 {
+    grid-column: 1 / -1;
+    align-self: end;
+}
+
+.SubmitCaseFirstStep label h4:nth-child(even) {
+    grid-column: 1 / -1;
+}
+
+.SubmitCaseFirstStep label span {
+    color: red;
+    font-size: 1.4rem;
+    grid-column: 1 / -1;
+
+}
+
+.SubmitCaseFirstStep label select {
+    border: 2px solid #00b050;
+    padding: 10px 30px;
+    grid-column: 1 / -1;
+    border-radius: 4px;
+}
+
+.SubmitCaseFirstStep label p {
+    margin-top: 10px;
+    grid-row: 3 / -1;
+}
+
+
+.SubmitCaseFirstStep label span.optional {
+    color: rgb(145, 141, 141);
+    font-size: 1rem;
+}
+
+.SubmitCaseFirstStep label > input,
+.SubmitCaseFirstStep label > textarea {
+    border: 2px solid #00b050;
+    grid-column: 1 / -1;
+    padding: 5px 15px;
+    border-radius: 4px;
+
+}
+
+
+.SubmitCaseFirstStep label > textarea {
+    grid-column: 1/ -1;
+}
+
+.SubmitCaseFirstStep label:last-of-type {
+    grid-column: 1/ -1;
+}
+
+.SubmitCaseFirstStep label:last-of-type h4 {
+    grid-column: 1/ -1;
+}
+
+.SubmitCaseFirstStep label:last-of-type textarea {
+    width: 100%;
+}
+
+
+.customDatePicker fieldset {
+    border: 2px solid #00b050;
+    
+}
+
+@media only screen and (max-width: 1250px) {
+    .SubmitCaseFirstStep {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .SubmitCaseFirstStep {
+        width: 100%;
+        border-radius: 0;
+        border: none;
+        padding: 20px;
+        gap: 20px;
+        grid-template-columns: repeat( auto-fit, minmax(50%, 1fr));
+    }
+}

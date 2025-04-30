@@ -1,0 +1,17 @@
+.OutlinedLinkButton {
+    background-color:#0070C0;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out; 
+}
+
+.OutlinedLinkButton:hover {
+    background-color: #0685e0;
+    color: white;
+}

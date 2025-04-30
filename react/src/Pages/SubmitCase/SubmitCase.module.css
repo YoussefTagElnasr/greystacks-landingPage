@@ -1,0 +1,56 @@
+.SubmitCase {
+    display: grid;
+    grid-template-rows: 100px auto 1fr;
+    align-items: start;
+    position: relative;
+}
+
+.SubmitCaseControls {
+    display: flex;
+    padding: 0px 6%;
+    margin-bottom: 30px;
+    justify-content: space-between;
+}
+
+.SubmitCase button.ControlButtons {
+    border: 3px solid #00B050;
+    background-color: transparent;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out; 
+}
+
+.SubmitCase button.ControlButtons:hover {
+    background-color: #00B050;
+    color: white;
+}
+
+.SubmitCase button.ControlButtons:disabled {
+    border: 3px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+@media print {
+    .SubmitCase .Stepper,
+    .SubmitCase .ControlButtons {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    .SubmitCase .Stepper {
+        width: 100%;
+    }
+
+    .SubmitCase {
+        width: 100vw;
+    }
+
+    .SubmitCase button.ControlButtons {
+        margin-top: 30px;
+    }
+}
