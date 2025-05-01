@@ -5,6 +5,11 @@ import object_detection from "@Assets/demo_object_detection.png"
 import OutlinedLinkButton from "@Components/Button/Outlined/OutlinedLinkButton";
 import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
+import CtImage from "@Assets/CT image.png"
+import viewer3d from "@Assets/3d viewer.png"
+import OBJViewer from "../../../components/OBJViewer";
+import tools from "@Assets/tools.png"
+
 const AboutUs = () => {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll( {
@@ -16,20 +21,52 @@ const AboutUs = () => {
         <section className={`${styles.AboutUs}`} id="AboutUs" ref={ref}>
             <motion.div className={styles.leftLine} style={{width: width}}></motion.div>
             <motion.div className={styles.rightLine} style={{width: width}}></motion.div>
-            <section className={styles.Info}>
-                <h2>AI enhanced CBCT volume comprehension</h2>
-                <div className={styles.Content}>
-                    <img src={object_detection} alt=""/>
-                    <div className={styles.Details}>
+            <div className={styles.AboutUsInfo}>
+                <br/>
+                <div className={styles.OurServices}>
+                <h1>our services</h1>
+                </div>
+                <div className={styles.PartOne}>
+                    <div className={styles.firstFeature}>
+                    <h2>Seamless CT Scan Viewing and Sharing in Your Browser</h2>
+                    <ul>
+                        <li>We provide a powerful platform for CT scan centers to effortlessly upload, view, and share scans directly through a web browser</li>
+                        <br/>
+                        <li>no software installation required. Sharing scans with clients has never been easier</li>
+                    </ul>
+                    </div>
+                        <img src={CtImage} alt="ct" />
+                </div>
+                <div className={styles.PartTwo}>
+                <OBJViewer objUrl="/models/Chocolate_Splash_Free_005.obj" outsideStyle={{ width: '500px', height: '500px' ,  borderRadius: '20px' , overflow: 'hidden' , marginLeft: '15px'}} />
+                    <div className={styles.SecFeature}>
+                        <h2>AI-Powered Segmentation & 3D Visualization</h2>
                         <ul>
-                            <li>Segment all regions of a CBCT volume.
-                            </li>
-                            <li>AI-Segmentations remove need of adjusting shift when viewing volume
-                            </li>
+                            <li>Our advanced AI segmentation enables dynamic 3D visualizations of CT scans.</li>
+                            <br/>
+                            <li> Users can isolate and toggle anatomical structures for a clearer diagnostic experience without the need to manually adjust scan layers or shift settings</li>
                         </ul>
                     </div>
                 </div>
-            </section>
+                <div className={styles.PartOne}>
+                    <div className={styles.firstFeature}>
+                    <h2>Precision Tools for Diagnosis</h2>
+                    <ul>
+                        <li>Our platform offers a comprehensive viewing experience with features like crosshairs for precise orientation, multi-angle reconstructions, and support for detailed measurement and calibration</li>
+                        <br/>
+                        <li>These tools are available for both standard image formats and DICOM (.dcm) files.</li>
+                    </ul>
+                    </div>
+                        <img src={tools} alt="tools" />
+                </div>
+                <div className={styles.trynow}>
+                    <h2>Easily upload and view a wide range of file formats, including: 
+                    .jpg, .jpeg, .png, .pdf, .stl, .obj, and .dcm.
+                    </h2>   
+                    <br />
+                    <button><span>Try Now</span></button>
+                </div>
+            </div>
         </section>
     );
 };

@@ -23,6 +23,7 @@
     "pica": "^9.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-intersection-observer": "^9.16.0",
     "styled-components": "^6.1.17",
     "three": "^0.175.0"
   },

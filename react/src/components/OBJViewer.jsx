@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-const OBJViewer = ({ objUrl }) => {
+const OBJViewer = ({ objUrl, outsideStyle = { width: '100%', height: '500px' } }) => {
     const mountRef = useRef(null);
 
     useEffect(() => {
@@ -92,7 +92,7 @@ const OBJViewer = ({ objUrl }) => {
         };
     }, [objUrl]);
 
-    return <div ref={mountRef} style={{ width: '100%', height: '500px' }} />;
+    return <div ref={mountRef} style={{ ...outsideStyle }} />;
 };
 
 export default OBJViewer;
