@@ -38,7 +38,7 @@ const AboutUs = () => {
                         <img src={CtImage} alt="ct" />
                 </div>
                 <div className={styles.PartTwo}>
-                <OBJViewer objUrl="/models/Chocolate_Splash_Free_005.obj" outsideStyle={{ width: '500px', height: '500px' ,  borderRadius: '20px' , overflow: 'hidden' , marginLeft: '15px'}} />
+                <OBJViewer objUrl="/models/Chocolate_Splash_Free_005.obj" outsideStyle={{ width: '500px', height: '500px' ,  borderRadius: '20px' , overflow: 'hidden' , marginLeft: '200px'}} />
                     <div className={styles.SecFeature}>
                         <h2>AI-Powered Segmentation & 3D Visualization</h2>
                         <ul>
