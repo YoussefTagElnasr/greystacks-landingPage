@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import mainLogo from "@Assets/logo.svg";
+import mainLogo from "@Assets/logo-cropped.svg";
 import styles from "./Header.module.css";
 import admin from "@Assets/admin-svgrepo-com.svg";
 import storage from "@Assets/storage-box-storage-box-svgrepo-com.svg";
