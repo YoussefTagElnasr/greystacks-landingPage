@@ -1,4 +1,5 @@
 import teeth from "@Assets/crowdingTeeth.png";
+import OBJViewer from "../../../components/OBJViewer";
 import styles from "./Hero.module.css";
 const Hero = () => {
     return (
@@ -8,7 +9,7 @@ const Hero = () => {
                 Featuring Segmentations And 3D vision
             </h1>
             <div className={`${styles.HeroVideo} Container`}>
-                <img src={teeth} alt="" />
+            <OBJViewer objUrl="/models/Chocolate_Splash_Free_005.obj" />
             </div>
         </section>
     );

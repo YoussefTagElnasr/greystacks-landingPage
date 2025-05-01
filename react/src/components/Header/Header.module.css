@@ -8,6 +8,8 @@
 }
 
 header {
+    position: sticky;
+    background-color: #244c7e;
     display: flex;
     justify-content: space-between;
     align-items: center;
