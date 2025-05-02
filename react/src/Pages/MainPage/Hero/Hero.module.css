@@ -1,28 +1,26 @@
-@keyframes AiPoweredAnimation {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
 .Hero {
     text-align: center;
     margin: 40px 0px;
-    overflow-x: hidden;
-}
-
-.Hero h1 {
-    font-size: 2rem;
-}
-
-.Hero h1 span {
-    padding: 5px 0px;
+    overflow: hidden;
+    background-color: white;
+    padding: 80px 0 0 0;
     position: relative;
+    color: #222;
 }
 
-.Hero h1 span::after {
+.HeroTitle {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 700;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.HeroTitle span {
+    position: relative;
+    display: inline-block;
+}
+
+.HeroTitle span::after {
     content: "";
     animation: AiPoweredAnimation 1s ease-in-out 300ms 1;
     width: 0%;
@@ -34,45 +32,63 @@
     position: absolute;
 }
 
-.Hero p {
-    margin-top: 20px;
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-.Hero .Buttons {
-    margin-top: 35px;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-}
-
-.Hero .HeroVideo {
+.HeroVideo {
     margin-top: 60px;
     display: flex;
     justify-content: center;
+    animation: fadeIn 1s ease-out forwards;
 }
 
-.Hero .HeroVideo video {
+.HeroVideo video {
     width: 100%;
     max-width: 800px;
-    display: block;
-    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
-@media only screen and (max-width: 550px) {
-    .Hero {
-        width: 100vw;
-        text-align: center;
-        margin: 40px 0px;
-    }
+.HeroVideo video:hover {
+    transform: scale(1.03);
+}
 
-    .Hero h1 {
-        font-size: 1.5rem;
-        line-height: 2;
-    }
+/* New curved SVG section divider */
+.Curve {
+    width: 100%;
+    line-height: 0;
+    position: relative;
+    margin-top: 60px;
+}
 
-    .Hero .HeroVideo {
+.Curve svg {
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+
+/* Animations */
+@keyframes AiPoweredAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
         width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 550px) {
+    .HeroTitle {
+        font-size: 2rem;
     }
 }

@@ -1,7 +1,7 @@
 .AboutUs {
     color: white;
     position: relative;
-    width: 100vw ;
+    width: 100vw;
     overflow-x: hidden;
 }
 
@@ -9,11 +9,11 @@
     background-color: #0C233F;
     display: flex;
     justify-content: center;
-    text-align: center;    
+    text-align: center;
 }
 
-.AboutUs .Info:last-of-type { 
-    border-top:60px solid #021a38b0;
+.AboutUs .Info:last-of-type {
+    border-top: 60px solid #021a38b0;
 }
 
 .leftLine {
@@ -32,47 +32,57 @@
     right: 50%;
 }
 
-.AboutUsInfo{
+.AboutUsInfo {
     background-color: #0C233F;
 }
 
-li{
-    max-width:600px;
-    word-wrap:break-word;
+li {
+    max-width: 600px;
+    word-wrap: break-word;
 }
 
-.OurServices{
+.OurServices {
     text-align: center;
 }
 
-.PartOne{
+.PartOne {
     display: flex;
     padding-left: 200px;
     justify-content: space-between;
+    align-items: center;
 }
 
-.PartOne img{
+.PartOne img {
     width: 600px;
     margin-top: 10px;
     margin-right: 200px;
-    margin-bottom: 40px; ;
+    margin-bottom: 40px;
 }
 
-.firstFeature{
-    transform: translateY(25%);
+.firstFeature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
 }
 
-.PartTwo{
+.PartTwo {
     display: flex;
     justify-content: space-between;
     margin-right: 170px;
+    align-items: center;
+    padding-left: 200px;
 }
 
-.SecFeature{
-    transform: translateY(27%);
+.SecFeature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 600px;
 }
 
-.trynow{
+.trynow {
     text-align: center;
 }
 
@@ -89,9 +99,9 @@ li{
     position: relative;
     overflow: hidden;
     margin-bottom: 15px;
-  }
-  
-  .trynow button::before {
+}
+
+.trynow button::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -101,24 +111,23 @@ li{
     background: #00bcd4;
     z-index: 0;
     transition: height 0.3s ease;
-  }
-  
-  .trynow button:hover::before {
+}
+
+.trynow button:hover::before {
     height: 100%;
-  }
-  
-  .trynow button:hover {
+}
+
+.trynow button:hover {
     color: #fff;
     border-color: #00bcd4;
-  }
-  
-  .trynow button:focus {
+}
+
+.trynow button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.3);
-  }
-  
-  .trynow button span {
+}
+
+.trynow button span {
     position: relative;
     z-index: 1;
-  }
-  
+}
