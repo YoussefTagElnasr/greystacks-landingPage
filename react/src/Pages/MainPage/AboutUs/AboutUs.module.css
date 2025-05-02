@@ -34,6 +34,8 @@
 
 .AboutUsInfo {
     background-color: #0C233F;
+    width: 100%;
+    padding: 0 2rem;
 }
 
 li {
@@ -45,45 +47,40 @@ li {
     text-align: center;
 }
 
-.PartOne {
+.PartOne, .PartTwo {
     display: flex;
+    flex-wrap: wrap;
     padding-left: 200px;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 30px;
 }
 
-.PartOne img {
+.PartOne img, .PartTwo img {
     width: 600px;
     margin-top: 10px;
     margin-right: 200px;
     margin-bottom: 40px;
 }
 
-.firstFeature {
+.firstFeature, .SecFeature {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
+}
+
+.firstFeature {
+    max-width: 600px;
 }
 
 .PartTwo {
-    display: flex;
-    justify-content: space-between;
     margin-right: 170px;
-    align-items: center;
-    padding-left: 200px;
-}
-
-.SecFeature {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    max-width: 600px;
 }
 
 .trynow {
     text-align: center;
+    margin-top: 40px;
 }
 
 .trynow button {
@@ -130,4 +127,81 @@ li {
 .trynow button span {
     position: relative;
     z-index: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .PartOne, .PartTwo {
+        flex-direction: column;
+        padding-left: 0;
+    }
+    
+    .PartOne img, .PartTwo img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .leftLine, .rightLine {
+        width: 100%;
+        left: 0;
+        right: 0;
+    }
+
+    .firstFeature, .SecFeature {
+        max-width: 100%;
+    }
+
+    .PartTwo {
+        margin-right: 0;
+    }
+
+
+    .trynow button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .OurServices h1 {
+        font-size: 1.5rem;
+    }
+
+    .AboutUs .Info {
+        padding: 1rem;
+    }
+
+    .AboutUsInfo {
+        padding: 2rem 1rem;
+    }
+
+    li {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .OurServices h1 {
+        font-size: 1.2rem;
+    }
+
+    
+
+    .PartOne, .PartTwo {
+        padding-left: 0;
+        align-items: flex-start;
+    }
+
+    .PartOne img, .PartTwo img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .trynow button {
+        padding: 1rem;
+    }
+
+    .firstFeature, .SecFeature {
+        padding: 0 1rem;
+    }
 }

@@ -1,0 +1,19 @@
+/* this css file will apply to all of the other canvases */
+/* keep in mind please */
+
+.container {
+    width: 500px;
+    height: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: #eee; 
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      height: 300px;
+      width: 300px;
+    }
+  }
+  

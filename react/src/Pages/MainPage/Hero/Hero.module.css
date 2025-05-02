@@ -9,10 +9,14 @@
 }
 
 .HeroTitle {
+    position: relative;
     font-size: 3rem;
     line-height: 1.2;
     font-weight: 700;
     animation: fadeIn 1s ease-out forwards;
+    display: inline-block;
+    z-index: 15;
+    pointer-events: none;
 }
 
 .HeroTitle span {
@@ -33,10 +37,13 @@
 }
 
 .HeroVideo {
+    position: relative;
+    z-index: 15;
     margin-top: 60px;
     display: flex;
     justify-content: center;
     animation: fadeIn 1s ease-out forwards;
+    pointer-events: none;
 }
 
 .HeroVideo video {
@@ -46,7 +53,6 @@
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
-    z-index: 15;
 }
 
 .HeroVideo video:hover {

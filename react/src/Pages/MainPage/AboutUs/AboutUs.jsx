@@ -44,7 +44,7 @@ const AboutUs = () => {
                 </div>
                 <div className={styles.PartTwo}>
                     <FadeInOnScroll from="left">
-                        <OBJViewer objUrl="/models/Chocolate_Splash_Free_005.obj" outsideStyle={{ width: '500px', height: '500px', borderRadius: '20px', overflow: 'hidden',}} />
+                        <OBJViewer objUrl="/models/Chocolate_Splash_Free_005.obj"/>
                     </FadeInOnScroll>
                     <FadeInOnScroll from="right" className={styles.SecFeature}>
                         <h2>AI-Powered Segmentation & 3D Visualization</h2>

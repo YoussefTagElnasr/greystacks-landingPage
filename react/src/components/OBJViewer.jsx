@@ -2,97 +2,87 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import styles from './OBJViewer.module.css'; // Import the CSS module
 
-const OBJViewer = ({ objUrl, outsideStyle = { width: '100%', height: '500px' } }) => {
-    const mountRef = useRef(null);
+const OBJViewer = ({ objUrl }) => {
+  const mountRef = useRef(null);
 
-    useEffect(() => {
-        // Scene setup
-        const width = mountRef.current.clientWidth;
-        const height = mountRef.current.clientHeight;
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0xf0f0f0);
+  useEffect(() => {
+    const width = mountRef.current.clientWidth;
+    const height = mountRef.current.clientHeight;
 
-        // Camera setup
-        const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-        camera.position.z = 5;
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xf0f0f0);
 
-        // Renderer setup
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(width, height);
-        mountRef.current.appendChild(renderer.domElement);
+    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+    camera.position.z = 5;
 
-        // Lighting
-        const ambientLight = new THREE.AmbientLight(0x404040, 1);
-        scene.add(ambientLight);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(width, height);
+    mountRef.current.appendChild(renderer.domElement);
 
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-        directionalLight.position.set(0, 1, 1);
-        scene.add(directionalLight);
+    const ambientLight = new THREE.AmbientLight(0x404040, 1);
+    scene.add(ambientLight);
 
-        // Controls for mouse interaction
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.25;
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(0, 1, 1);
+    scene.add(directionalLight);
 
-        // Load OBJ model
-        const loader = new OBJLoader();
-        loader.load(
-            objUrl,
-            (object) => {
-                // Center the object in view
-                const box = new THREE.Box3().setFromObject(object);
-                const center = box.getCenter(new THREE.Vector3());
-                const size = box.getSize(new THREE.Vector3());
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.25;
 
-                const maxDim = Math.max(size.x, size.y, size.z);
-                camera.position.z = maxDim * 2.5;
+    const loader = new OBJLoader();
+    loader.load(
+      objUrl,
+      (object) => {
+        const box = new THREE.Box3().setFromObject(object);
+        const center = box.getCenter(new THREE.Vector3());
+        const size = box.getSize(new THREE.Vector3());
 
-                // Move object to center
-                object.position.x = -center.x;
-                object.position.y = -center.y;
-                object.position.z = -center.z;
+        const maxDim = Math.max(size.x, size.y, size.z);
+        camera.position.z = maxDim * 2.5;
 
-                scene.add(object);
-            },
-            (xhr) => {
-                console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
-            },
-            (error) => {
-                console.error('An error happened', error);
-            }
-        );
+        object.position.x = -center.x;
+        object.position.y = -center.y;
+        object.position.z = -center.z;
 
-        // Animation loop
-        const animate = () => {
-            requestAnimationFrame(animate);
-            controls.update();
-            renderer.render(scene, camera);
-        };
+        scene.add(object);
+      },
+      (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded');
+      },
+      (error) => {
+        console.error('An error happened', error);
+      }
+    );
 
-        animate();
+    const animate = () => {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    };
 
-        // Handle window resize
-        const handleResize = () => {
-            const width = mountRef.current.clientWidth;
-            const height = mountRef.current.clientHeight;
+    animate();
 
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-            renderer.setSize(width, height);
-        };
+    const handleResize = () => {
+      const width = mountRef.current.clientWidth;
+      const height = mountRef.current.clientHeight;
 
-        window.addEventListener('resize', handleResize);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    };
 
-        // Cleanup
-        return () => {
-            window.removeEventListener('resize', handleResize);
-            mountRef.current.removeChild(renderer.domElement);
-            scene.dispose();
-        };
-    }, [objUrl]);
+    window.addEventListener('resize', handleResize);
 
-    return <div ref={mountRef} style={{ ...outsideStyle }} />;
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      mountRef.current.removeChild(renderer.domElement);
+    };
+  }, [objUrl]);
+
+  return <div ref={mountRef} className={styles.container} />;
 };
 
 export default OBJViewer;

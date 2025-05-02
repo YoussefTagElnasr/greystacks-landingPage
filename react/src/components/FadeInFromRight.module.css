@@ -1,0 +1,11 @@
+.fadeInRight {
+    opacity: 0;
+    transform: translateX(100%); /* Initially off to the right */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+  
+  .visible {
+    opacity: 1;
+    transform: translateX(0); /* Move to its final position */
+  }
+  
