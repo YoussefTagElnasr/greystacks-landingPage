@@ -40,11 +40,13 @@
 }
 
 .HeroVideo video {
+    position: relative;
     width: 100%;
     max-width: 800px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
+    z-index: 15;
 }
 
 .HeroVideo video:hover {

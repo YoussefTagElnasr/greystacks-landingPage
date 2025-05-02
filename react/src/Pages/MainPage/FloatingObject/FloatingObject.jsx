@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./FloatingObject.css";
 
-const FloatingObject = ({ src, initialX = 100, initialY = 100 }) => {
+const FloatingObject = ({ src, initialX = 100, initialY = 100, customStyle = {} }) => {
   const [position, setPosition] = useState({ x: initialX, y: initialY });
   const [dragging, setDragging] = useState(false);
   const offset = useRef({ x: 0, y: 0 });
@@ -40,22 +40,23 @@ const FloatingObject = ({ src, initialX = 100, initialY = 100 }) => {
       x: e.clientX - position.x,
       y: e.clientY - position.y,
     };
-    e.preventDefault(); // prevent image drag ghost
+    e.preventDefault(); 
   };
 
   return (
-      <img
-          src={src}
-          className="floating-object"
-          alt=""
-          onMouseDown={handleMouseDown}
-          style={{
-            left: `${position.x}px`,
-            top: `${position.y}px`,
-            cursor: dragging ? "grabbing" : "grab",
-          }}
-          draggable={false}
-      />
+    <img
+      src={src}
+      className="floating-object"
+      alt=""
+      onMouseDown={handleMouseDown}
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+        cursor: dragging ? "grabbing" : "grab",
+        ...customStyle,  
+      }}
+      draggable={false}
+    />
   );
 };
 
