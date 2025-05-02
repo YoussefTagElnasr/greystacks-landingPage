@@ -24,6 +24,8 @@ const Header = () => {
       <Link to="/">
         <img src={mainLogo} alt="Our Logo" className={styles.logo} />
       </Link>
+
+      {/* Button Group */}
       <div className={styles.buttonGroup}>
         <button className={styles.left} onClick={handleGreystacksClick}>
           <img src={admin} alt="admin" />
