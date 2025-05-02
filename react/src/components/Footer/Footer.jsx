@@ -1,15 +1,17 @@
 import styles from "./Footer.module.css";
 import mainLogo from "@Assets/logo-cropped.svg";
+
 const Footer = () => {
-    let year = new Date;
-    year = year.getFullYear();
+    const year = new Date().getFullYear();
+
     return (
         <footer className={styles.Footer}>
-            <img src={mainLogo} alt="Our Logo" style={{ height: '220px' }} />
-            <p>Copyright © {year} Greystacks</p>
-            <div className={styles.Footerlinks}>
-            </div>
-        </footer>
+    <div className={styles.content}>
+        <img src={mainLogo} alt="logo" />
+        <span>© 2025 Greystacks. All rights reserved.</span>
+    </div>
+</footer>
+
     );
 };
 

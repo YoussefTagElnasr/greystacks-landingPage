@@ -101,14 +101,13 @@ header {
   }
 
   .buttonGroup button {
-    font-size: 0.8rem;  /* Smaller buttons */
-    padding: 8px 0;     /* Reduced padding */
+    font-size: 0.8rem; 
+    padding: 8px 0;       
   }
 
-  /* Remove hover effect on mobile */
   .buttonGroup button:hover {
     transform: none;
-    flex: 1; /* Ensure no size change on hover */
+    flex: 1;
   }
 }
 
