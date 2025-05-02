@@ -10,6 +10,7 @@
 .Hero {
     text-align: center;
     margin: 40px 0px;
+    overflow-x: hidden;
 }
 
 .Hero h1 {
@@ -48,9 +49,14 @@
 
 .Hero .HeroVideo {
     margin-top: 60px;
+    display: flex;
+    justify-content: center;
 }
 
-.Hero .HeroVideo img { 
+.Hero .HeroVideo video {
+    width: 100%;
+    max-width: 800px;
+    display: block;
     margin: auto;
 }
 

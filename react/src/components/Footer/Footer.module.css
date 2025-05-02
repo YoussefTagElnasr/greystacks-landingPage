@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     width: 100vw;
+    overflow: hidden;
 }
 
 .Footer img {
