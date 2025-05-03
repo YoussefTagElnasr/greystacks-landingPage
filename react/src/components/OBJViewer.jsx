@@ -31,9 +31,6 @@ const PLYViewer = ({ plyUrl }) => {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(0, 1, 1);
     scene.add(directionalLight);
-    const axesHelper = new THREE.AxesHelper(100); // size can be adjusted
-    scene.add(axesHelper);
-
     // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
