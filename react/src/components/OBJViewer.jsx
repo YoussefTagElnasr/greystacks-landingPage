@@ -31,12 +31,15 @@ const PLYViewer = ({ plyUrl }) => {
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(0, 1, 1);
     scene.add(directionalLight);
+    const axesHelper = new THREE.AxesHelper(100); // size can be adjusted
+    scene.add(axesHelper);
 
     // Controls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.25;
-
+    controls.minPolarAngle = 0;
+    controls.maxPolarAngle = Math.PI;
     // Load PLY file
     const loader = new PLYLoader();
     loader.load(
@@ -64,8 +67,9 @@ const PLYViewer = ({ plyUrl }) => {
         // Adjust camera based on point cloud size
         const size = box.getSize(new THREE.Vector3());
         const maxDim = Math.max(size.x, size.y, size.z);
-        camera.position.z = maxDim * 2.5;
-        
+
+        camera.position.z = maxDim * 0.9;
+
         scene.add(pointCloud);
       },
       (xhr) => {
@@ -79,7 +83,7 @@ const PLYViewer = ({ plyUrl }) => {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      controls.update();
+      // controls.update();
       renderer.render(scene, camera);
     };
     animate();

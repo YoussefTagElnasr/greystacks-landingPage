@@ -39,7 +39,7 @@ const AboutUs = () => {
                 </div>
                 <div className={styles.PartTwo}>
                     <FadeInOnScroll from="left">
-                        <OBJViewer plyUrl="/models/combined_fps_pointcloud.ply"/>
+                        <OBJViewer plyUrl="/models/combined_fps_pointcloud4_transformed.ply"/>
                     </FadeInOnScroll>
                     <FadeInOnScroll from="right" className={styles.SecFeature}>
                         <h2>AI-Powered Segmentation & 3D Visualization</h2>
