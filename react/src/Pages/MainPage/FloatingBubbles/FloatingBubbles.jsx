@@ -7,10 +7,10 @@ const FloatingBubbles = () => {
   useEffect(() => {
     const newBubbles = Array.from({ length: 15 }).map((_, i) => ({
       id: i,
-      left: Math.random() * 100, // percentage
-      size: 20 + Math.random() * 40, // px
-      delay: Math.random() * 5, // seconds
-      duration: 10 + Math.random() * 10, // seconds
+      left: Math.random() * 100, 
+      size: 20 + Math.random() * 40, 
+      delay: Math.random() * 5, 
+      duration: 10 + Math.random() * 10, 
     }));
     setBubbles(newBubbles);
   }, []);

@@ -1,13 +1,8 @@
 // AboutUs.jsx
 import styles from "./AboutUs.module.css";
-import teeth from "@Assets/crowdingTeeth.png";
-import chatbot from "@Assets/multimodal_chat_demo2.jpg"
-import object_detection from "@Assets/demo_object_detection.png"
-import OutlinedLinkButton from "@Components/Button/Outlined/OutlinedLinkButton";
 import { useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import CtImage from "@Assets/CT image.png"
-import viewer3d from "@Assets/3d viewer.png"
 import OBJViewer from "../../../components/OBJViewer";
 import tools from "@Assets/tools.png"
 import FadeInOnScroll from "../../../components/FadeInOnScroll";
