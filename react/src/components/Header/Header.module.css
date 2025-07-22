@@ -10,7 +10,8 @@
 header {
   position: sticky;
   top: 0;
-  background-image: linear-gradient(white, transparent);
+  background-color: #0C233F;
+  /* background-image: linear-gradient(white, transparent); */
   display: flex;
   justify-content: space-between;
   align-items: center;
