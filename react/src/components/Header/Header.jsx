@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import mainLogo from "@Assets/logo-cropped.svg";
+import mainLogo from "@Assets/greystacks-Logo.png";
 import styles from "./Header.module.css";
 import admin from "@Assets/admin-svgrepo-com.svg";
 import storage from "@Assets/storage-box-storage-box-svgrepo-com.svg";
@@ -32,9 +32,6 @@ const Header = () => {
         </button>
         <button className={styles.center} onClick={handlePacsAdminClick}>
           <img src={storage} alt="storage" />
-        </button>
-        <button className={styles.right} onClick={handleKeycloakClick}>
-          <img src={viewer} alt="viewer" />
         </button>
       </div>
     </header>
