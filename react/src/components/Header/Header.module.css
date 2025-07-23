@@ -8,10 +8,14 @@
 }
 
 header {
+  border-radius: 0 0 15px 15px ;
   position: sticky;
   top: 0;
+  width: 70%;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
   background-color: #0C233F;
-  /* background-image: linear-gradient(white, transparent); */
   display: flex;
   justify-content: space-between;
   align-items: center;
